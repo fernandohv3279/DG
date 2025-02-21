@@ -61,5 +61,38 @@ We have two cases: $\alpha=\beta$ and $\alpha\neq\beta$.
 \subsection*{(b)}
 \section*{\#2}
 \section*{\#3}
+\textbf{Lemma:} The result is true for $\R$ (case $n=1$).
+
+\textbf{Proof:}
+
+	Since $f$ is continuous $f(M)$ is compact so
+	it has a minimum; call it $p$. Take a smooth
+	curve
+	$\alpha(t):(-\varepsilon,\varepsilon)\to M$
+	such that $\alpha(0)=p$ and $\alpha'(0)=v$,
+	then $df_p(v)=(f\circ \alpha)'(0)$ by
+	definition, but notice that $f\circ\alpha:\R
+	\to\R$ is a smooth function with a minimum at
+	0. So $(f\circ \alpha)'(0)=0$, hence
+	$df_p(v)=(f\circ \alpha)'(0)=0$, so in
+	particular the differential is not surjective
+	at p (i.e. we have a critical point) and this
+	concludes the proof of the lemma.\\
+	\textbf{Now for $\R^n$:}
+
+\textbf{Proof:}
+
+	Define the $\pi:\R^n\to\R$ as projection onto
+	the first coordinate (note that this is
+	surjective). Now let's consider $\pi\circ
+	f:M\to\R$, this is a smooth map so we can
+	apply the Lemma to conclude that there is a
+	point $p$ such that $d(\pi\circ f)_p$ is not
+	surjective. Using the chain rule this is the
+	same as saying $d\pi_{f(p)}df_p$ is not
+	surjective; since $d\pi_{f(p)}=e_1^T$ is
+	surjective we conclude $df_p$ is not
+	surjective, so it is critical.
+
 \section*{\#4}
 \end{document}
