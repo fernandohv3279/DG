@@ -99,8 +99,10 @@ We have two cases: $\alpha=\beta$ and $\alpha\neq\beta$.
 	surjective, so it is critical.
 
 \section*{\#4}
+
 \subsection*{(a)}
 $[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
+
 \subsection*{(b)}
 \begin{align*}
 [aX+bY,Z]f
@@ -111,6 +113,7 @@ $[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
 &=a[X,Z]f+b[Y,Z]f\\
 &=(a[X,Z]+b[Y,Z])f.
 \end{align*}
+
 \subsection*{(c)}
 \begin{multline*}
 (\textcolor{green}{[[X,Y],Z]} +\textcolor{blue}{[[Y,Z],X]} +\textcolor{red}{[[Z,X],Y]})(f)=\\
@@ -130,5 +133,20 @@ $[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
 \textcolor{purple}{Y[Z,X]f-[Z,X](Yf)}+\textcolor{red}{[[Z,X],Y]f}=\\
 -\textcolor{purple}{[[Z,X],Y]f}+\textcolor{red}{[[Z,X],Y]f}=0
 \end{multline*}
+
 \subsection*{(d)}
+% TODO: Add lemma to justify Eq 2.
+\begin{align*}
+[fX,gY]h
+&=\\
+&=fX(gYh)-gY(fXh)\\
+&=fXgYh+fgXYh-gYfXh-gfYXh\\
+&=fXgYh+fgXYh-gfYXh-gYfXh\\
+&=fXgYh+fg(XYh-YXh)-gYfXh\\
+&=fXgYh+fg[X,Y]h-gYfXh\\
+&=fg[X,Y]h+fXgYh-gYfXh\\
+&=(fg[X,Y]+fXgY-gYfX)h.
+\end{align*}
+
+
 \end{document}
