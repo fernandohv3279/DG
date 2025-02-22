@@ -135,12 +135,17 @@ $[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
 \end{multline*}
 
 \subsection*{(d)}
-% TODO: Add lemma to justify Eq 2.
+\textbf{Lemma:} A vector field $V$ satisfies $V(fg)=fV(g)+gV(f)$. This is equivalent to the definition we saw in class.
+
+\textbf{Proof:}
+
+I will not prove this, it's late :S.\\
+\textbf{Now the proof of (d):}
 \begin{align*}
 [fX,gY]h
 &=\\
 &=fX(gYh)-gY(fXh)\\
-&=fXgYh+fgXYh-gYfXh-gfYXh\\
+&=fXgYh+fgXYh-gYfXh-gfYXh\qquad(\text{by the lemma})\\
 &=fXgYh+fgXYh-gfYXh-gYfXh\\
 &=fXgYh+fg(XYh-YXh)-gYfXh\\
 &=fXgYh+fg[X,Y]h-gYfXh\\
