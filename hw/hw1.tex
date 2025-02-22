@@ -19,7 +19,8 @@ Consider the charts $(\R,\phi_N)$ and
 $(\R,\phi_S)$, where $\phi_N$ and $\phi_S$ are
 defined in example 1.15 of the notes (inverse
 stereographic projection from the north and south poles
-respectively).\\
+respectively) with the exception that our $\phi_N$ has as its last coordinate
+$1-||x||^2$ (the negative of the original).\\
 \textbf{Claim:} This collection of charts
 works.
 
@@ -38,26 +39,30 @@ We have two cases: $\alpha=\beta$ and $\alpha\neq\beta$.
 
 	\item $\alpha\neq\beta$: WLOG take $\phi_\beta=\phi_N$ and
 		$\phi_\alpha=\phi_S$ then (as in page 4 of the notes)
-		$(\phi_N^{-1}\circ\phi_S)(\vec{x})=\frac{1}{||\vec{x}||^2}\vec{x}$.
-		If we pick the curve $\alpha(t)=p+tv$ we get:
+		$(\phi_N^{-1}\circ\phi_S)\vec{x}=\frac{1}{||(x_1,\dots,-x_n)||^2}(x_1,\dots,-x_n)$.
+		For convenience let's use the following notation:
+		if $x=(x_1,\dots,x_n)$ then $\tilde{x}=(x_1,\dots,-x_n)$. Now if we
+		pick the curve $\alpha(t)=p+tv$ we get:
 		\begin{align*}
-			\left(\frac{p+tv}{||p+tv||^2}\right)'(0)
-			&=\left(\frac{v||p+tv||^2-(p+tv)\left(2(p+tv)\cdot v\right)}{||p+tv||^4}\right)(0)\\
-			&=\frac{v||p||^2-2p(p\cdot v)}{||p||^4}\\
-			&=\frac{v||p||^2-2pp^Tv}{||p||^4}\\
-			&=\frac{||p||^2I-2pp^T}{||p||^4}v\\
-			&=\frac{1}{||p||^2}\left(I-\frac{2}{||p||^2}pp^T\right)v.
+			\left(\frac{\tilde{p}+t\tilde{v}}{||\tilde{p}+t\tilde{v}||^2}\right)'(0)
+			&=\left(\frac{\tilde{v}||\tilde{p}+t\tilde{v}||^2-(\tilde{p}+t\tilde{v})\left(2(\tilde{p}+t\tilde{v})\cdot
+			\tilde{v}\right)}{||\tilde{p}+t\tilde{v}||^4}\right)(0)\\
+			&=\frac{\tilde{v}||\tilde{p}||^2-2\tilde{p}(\tilde{p}\cdot \tilde{v})}{||\tilde{p}||^4}\\
+			&=\frac{\tilde{v}||\tilde{p}||^2-2\tilde{p}\tilde{p}^T\tilde{v}}{||\tilde{p}||^4}\\
+			&=\frac{||\tilde{p}||^2I-2\tilde{p}\tilde{p}^T}{||\tilde{p}||^4}\tilde{v}\\
+			&=\frac{1}{||\tilde{p}||^2}\left(I-\frac{2}{||\tilde{p}||^2}\tilde{p}\tilde{p}^T\right)\tilde{v}\\
+			&=\frac{1}{||\tilde{p}||^2}\left(I-\frac{2}{||\tilde{p}||^2}\tilde{p}\tilde{p}^T\right)\text{diag}(1,\dots,1,-1)v.
 		\end{align*}
 
-		Then using the Weinstein–Aronszajn
-		identity (thanks Clay!) we can
-		compute the determinant like this:
+		Then using the Weinstein–Aronszajn identity (thanks Clay!) and
+		since $||x||=||\tilde{x}||$ we can compute the determinant like
+		this:
 
 		\begin{align*}
-\bigg|\frac{1}{||p||^2}\left(I-\frac{2}{||p||^2}pp^T\right)\bigg|
-&= \frac{1}{||p||^{2n}}\bigg|\left(I-\frac{2}{||p||^2}pp^T\right)\bigg|\\
-&=\frac{2}{||p||^{2n}}\bigg|\left(1-\frac{2}{||p||^2}p^Tp\right)\bigg|\qquad(\text{W-A Identity})\\
-&=\frac{-1}{||p||^{2n}}.
+			\bigg|\frac{1}{||p||^2}\left(I-\frac{2}{||p||^2}\tilde{p}\tilde{p}^T\right)\text{diag}(1,\dots,1,-1)\bigg|
+&= \frac{-1}{||p||^{2n}}\bigg|\left(I-\frac{2}{||p||^2}\tilde{p}\tilde{p}^T\right)\bigg|\\
+&=\frac{-1}{||p||^{2n}}\bigg|\left(1-\frac{2}{||p||^2}\tilde{p}^T\tilde{p}\right)\bigg|\\
+&=\frac{1}{||p||^{2n}}.
 		\end{align*}
 \end{itemize}
 % TODO: Change it to be positive!!
