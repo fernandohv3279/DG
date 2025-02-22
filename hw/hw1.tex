@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{graphicx}
+\usepackage{xcolor}
 
 \begin{document}
 
@@ -112,18 +113,18 @@ $[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
 \end{align*}
 \subsection*{(c)}
 \begin{multline*}
-([[X,Y],Z] +[[Y,Z],X] +[[Z,X],Y])(f)=\\
-[X,Y](Zf)-Z([X,Y]f)
-+[Y,Z](Xf)-X([Y,Z]f)
-+[[Z,X],Y]f=\\
-XY(Zf)-YX(Zf)-ZX(Yf)+ZY(Xf)\\
-+YZ(Xf)-ZY(Xf)-XY(Zf)+XZ(Yf)\\
-+[[Z,X],Y]f=\\
--YX(Zf)-ZX(Yf)\\
-+YZ(Xf)+XZ(Yf)\\
-+[[Z,X],Y]f=\\
-Y[Z,X]f-[Z,X](YF)+[[Z,X],Y]f=\\
--[[Z,X],Y]f+[[Z,X],Y]f=0
+	(\textcolor{green}{[[X,Y],Z]} +\textcolor{blue}{[[Y,Z],X]} +\textcolor{red}{[[Z,X],Y])(f)}=\\
+	\textcolor{green}{[X,Y](Zf)-Z([X,Y]f)}\\
+	+\textcolor{blue}{[Y,Z](Xf)-X([Y,Z]f)}\\
+	+\textcolor{red}{[[Z,X],Y]f}=\\
+\textcolor{green}{XY(Zf)-YX(Zf)-ZX(Yf)+ZY(Xf)}\\
++\textcolor{blue}{YZ(Xf)-ZY(Xf)-XY(Zf)+XZ(Yf)}\\
++\textcolor{red}{[[Z,X],Y]f}=\\
+-\textcolor{orange}{YX(Zf)}-\textcolor{yellow}{ZX(Yf)}\\
++\textcolor{orange}{YZ(Xf)}+\textcolor{yellow}{XZ(Yf)}\\
++\textcolor{red}{[[Z,X],Y]f}=\\
+\textcolor{orange}{Y[Z,X]f}-\textcolor{yellow}{[Z,X](YF)}+\textcolor{red}{[[Z,X],Y]f}=\\
+-[[Z,X],Y]f+\textcolor{red}{[[Z,X],Y]f}=0
 \end{multline*}
 \subsection*{(d)}
 \end{document}
