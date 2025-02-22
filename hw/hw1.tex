@@ -99,7 +99,31 @@ We have two cases: $\alpha=\beta$ and $\alpha\neq\beta$.
 
 \section*{\#4}
 \subsection*{(a)}
+$[X,Y]f=X(Yf)-Y(Xf)=-(Y(Xf)-X(Yf))=-[Y,X]f$.
 \subsection*{(b)}
+\begin{align*}
+[aX+bY,Z]f
+&=(aX+bY)(Zf)-Z((aX+bY)f)\\
+&=aX(Zf)+bY(Zf)-Z(aXf+bYf)\\
+&=aX(Zf)+bY(Zf)-aZ(Xf)-bZ(Yf)\\
+&=a(X(Zf)-Z(Xf))+b(Y(Zf)-Z(Yf))\\
+&=a[X,Z]f+b[Y,Z]f\\
+&=(a[X,Z]+b[Y,Z])f.
+\end{align*}
 \subsection*{(c)}
+\begin{multline*}
+([[X,Y],Z] +[[Y,Z],X] +[[Z,X],Y])(f)=\\
+[X,Y](Zf)-Z([X,Y]f)
++[Y,Z](Xf)-X([Y,Z]f)
++[[Z,X],Y]f=\\
+XY(Zf)-YX(Zf)-ZX(Yf)+ZY(Xf)\\
++YZ(Xf)-ZY(Xf)-XY(Zf)+XZ(Yf)\\
++[[Z,X],Y]f=\\
+-YX(Zf)-ZX(Yf)\\
++YZ(Xf)+XZ(Yf)\\
++[[Z,X],Y]f=\\
+Y[Z,X]f-[Z,X](YF)+[[Z,X],Y]f=\\
+-[[Z,X],Y]f+[[Z,X],Y]f=0
+\end{multline*}
 \subsection*{(d)}
 \end{document}
