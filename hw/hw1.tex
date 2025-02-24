@@ -65,11 +65,28 @@ We have two cases: $\alpha=\beta$ and $\alpha\neq\beta$.
 &=\frac{1}{||p||^{2n}}.
 		\end{align*}
 \end{itemize}
-% TODO: Change it to be positive!!
-
 
 \subsection*{(b)}
+
 \section*{\#2}
+\textbf{Lemma:} $dF_U$ is surjective at all $U$.
+
+\textbf{Attempt:}
+Perhaps in this case we can use the multivariable calculus definition to see
+that $dF_U=U^*+U$.
+\begin{align*}
+\lim_{H\to0}\frac{F(U+H)-F(U)-(UH+U^*H)}{||H||}
+&=0\\
+\end{align*}
+we also know that:
+\[
+F(U+H)=UU^*+UH^*+HU^*+HH^*=F(U)+UH^*+HU^*+HH^*
+\]
+Replacing this in the expression above I tried to prove the limit is 0 but I
+couldn't conclude.\\
+\textbf{Proof of the exercise:}
+By the lemma $I_{d\times d}$ is a regular value of $f$. Then by theorem 1.3.9
+$f^{-1}(I)$ is a submanifold of M, since the dimension of $\text{Mat}_{d\times d}(\mathbb{C})$ is $2d^2$ and the dimension of $\mathcal{H}(d)$ is $d^2$ then $U(d)$ has dimension $2d^2-d^2=d^2$.
 \section*{\#3}
 \textbf{Lemma:} The result is true for $\R$ (case $n=1$).
 
