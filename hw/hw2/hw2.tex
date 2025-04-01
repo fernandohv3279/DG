@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -18,6 +19,25 @@
 \subsection*{(b)}
 \subsection*{(c)}
 \section*{\#2}
+\subsection*{$\implies$}
+
+Extend $\{v_1,\dots,v_k\}$ to a basis for $V$. Let's denote this basis
+$\{v_1,\dots,v_n\}$. Proposition 2.4.5 gives us a basis for $\bigwedge^k(V)$.
+One of the elements of this basis is exactly $v_1\wedge \cdots\wedge v_k$. In
+particular, this element must be different than 0 because it is an element of a
+basis.
+
+\subsection*{$\impliedby$}
+Let's prove the contrapositive.
+
+If the vectors are l.d. then we can write $v_i=\sum_{j\neq i}a_jv_j$ for some
+$i\in\{1,\dots,k\}$. Then
+\begin{align*}
+	v_1\wedge\cdots\wedge v_i \wedge\cdots\wedge v_k =&
+	v_1\wedge\cdots\wedge \left(\sum_{j\neq i}a_jv_j\right) \wedge\cdots\wedge v_k\\
+	=& \sum_{j\neq i}a_j \left(v_1\wedge\cdots\wedge v_j \wedge\cdots\wedge v_k\right)\\
+	=& 0.
+\end{align*}
 \section*{\#3}
 \subsection*{(a)}
 \subsection*{(b)}
