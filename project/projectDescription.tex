@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\addbibresource{project.bib}
+
+\begin{document}
+
+\newcommand{\R}{\mathbb{R}}
+
+\title{MATH 670 Project Description}
+\author{Fernando}
+\date{\today}
+\maketitle
+
+\section*{Project title and format}
+
+\textbf{Title:} An application of differential geometry to magnetic cloaking.\\
+\textbf{Format:} Paper?
+
+\section*{Project description}
+
+The main idea in cloaking is to hide (cloak) a specific region of space from an
+incident wave. The goal is that after the wave passes through the cloak it is
+undistinguishable from the wave we would see if the object was not there,
+making the region inside the cloak effectively invisible.
+
+Cloaking often focuses on electromagnetic waves, but it is possible to cloak
+mechanical waves too. For this project I would like to focus on magnetic
+cloaking, i.e. the goal here is to take a magnet and put it inside our cloak,
+then we should be able to move the cloak (with the magnet inside it) through a
+magnetic field as if it were a non-magnetic material, i.e. the magnetic field
+should not exert any force on the magnet (nor the cloak!) and vice versa.
+
+There are different ways to approach this, one option is to use geometrical
+transformations; this technique uses the fact that Maxwell's equations are form
+invariant under change of coordinates. The procedure is as follows:
+\begin{enumerate}
+\item
+
+Make a geometric transformation that distorts the space in a way that avoids
+the region we want to cloak.
+
+\item
+
+Apply this geometric transformation to Maxwell's equations.
+
+\item
+
+In this new coordinate system, modify Maxwell's equations to have the same
+form they did in the original coordinates (this will change the constants of
+the equation).
+
+\item
+
+The constants obtained in the previous step will tell us the material
+properties we need for our cloak, then we can try to build it.
+
+\end{enumerate}
+
+
+With this application in mind what I would like to do for the project is to
+understand and explain the differential geometry part, focusing on steps two 2
+and 3.
+
+\nocite{ward96}
+
+\printbibliography
+
+\end{document}
