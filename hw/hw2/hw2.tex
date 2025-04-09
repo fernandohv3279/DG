@@ -15,9 +15,17 @@
 \maketitle
 
 \section*{\#1}
-\subsection*{(a)}
-\subsection*{(b)}
+% \subsection*{(a)}
+% \subsection*{(b)}
 \subsection*{(c)}
+Let $w_i=Av_i$, let $c_i$ be the $i$-th column of $A$ and let $v_i^j$ be the
+$j$-th entry of $v_i$, then $w_i=\sum_j v_i^jc_j$ and so
+\begin{align*}
+	w_1\wedge\dots\wedge w_k&=\sum_j v_1^jc_j\wedge\cdots\wedge\sum_j v_k^jc_j\\
+				&=\sum_{\sigma\in S_k}v_1^{\sigma(1)}\cdots v_k^{\sigma(k)}c_{\sigma(1)}\wedge\cdots\wedge c_{\sigma(k)}\\
+				&=\sum_{\sigma\in S_k}\text{sgn}(\sigma)v_1^{\sigma(1)}\cdots v_k^{\sigma(k)}c_1\wedge\cdots\wedge c_k\\
+				&=(\det A)c_1\wedge\cdots\wedge c_k.
+\end{align*}
 \section*{\#2}
 \subsection*{$\implies$}
 
@@ -49,7 +57,7 @@ We have that $v\wedge w +x\wedge y=z\wedge k$. Then
 	&=x\wedge y \wedge v \wedge w + v \wedge w \wedge x\wedge y\\
 	&=2v \wedge w \wedge x\wedge y.
 \end{align*}
-By problem 2 this meand that $v,w,x,y$ are l.d.
+By problem 2 this means that $v,w,x,y$ are l.d.
 \subsubsection*{$\impliedby$}
 W.L.O.G suppose $w=\alpha v+\beta x+\gamma y$. Then
 \begin{align*}
@@ -79,10 +87,10 @@ by part a we can write $\omega=v\wedge w+x\wedge y$ with $v,w,x,y$ l.i. then
 \end{align*}
 By problem 2 this is not 0 because $v,w,x,y$ are l.i.
 
-\section*{\#4}
-\subsection*{(a)}
-\subsection*{(b)}
-\subsection*{(c)}
+% \section*{\#4}
+% \subsection*{(a)}
+% \subsection*{(b)}
+% \subsection*{(c)}
 \section*{\#5}
 
 By contrapositive. Suppose $\omega$ is exact. Then by definition 2.5.7
