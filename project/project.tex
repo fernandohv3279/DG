@@ -1,10 +1,11 @@
-\documentclass{article}
+% \documentclass{article}
+\documentclass{amsart}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{biblatex}
-\usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage{blindtext}
+\usepackage{mathtools}
 
 \addbibresource{project.bib}
 
@@ -12,62 +13,66 @@
 
 \newcommand{\R}{\mathbb{R}}
 
-\title{MATH 670 Project Description}
+\title{An application of differential geometry to magnetic cloaking}
 \author{Fernando}
 \date{\today}
 \maketitle
 
-\section*{Project title and format}
+% TODO: improve all titles
+\section{Intro}
+\blindtext[1]
+\section{Theory}
+Put the math from \cite{ward96} here.
 
-\textbf{Title:} An application of differential geometry to magnetic cloaking.\\
-\textbf{Format:} Paper?
+\section{Geometric transformation 1}
+Let's do the computation in \cite{ward96} with the following transformation:
+\[\begin{cases}
+r'=R_1+r(R_2-R_1)/R_2\\
+\theta'=\theta\\
+z'=z\\
+\end{cases}\]
+In terms of the original variables this is
+\[\begin{cases}
+r=\frac{r'-R_1}{R_2-R_1}R_2=\frac{R_2}{R_2-R_1}r'-\frac{R_1R_2}{R_2-R_1}\\
+\theta=\theta'\\
+z=z'\\
+\end{cases}\]
+Then following the formula from \cite{ward96} we have
+\begin{align*}
+Q_{11}
+=&\frac{\partial r}{\partial r'}\frac{\partial r}{\partial r'}
++\frac{\partial \theta}{\partial r'}\frac{\partial \theta}{\partial r'}
++\frac{\partial z}{\partial r'}\frac{\partial z}{\partial r'}\\
+=&\frac{\partial r}{\partial r'}\frac{\partial r}{\partial r'}\\
+=&\left(\frac{R_2}{R_2-R_1}\right)^2
+\end{align*}
 
-\section*{Project description}
+\begin{align*}
+Q_{22}
+=&\frac{\partial r}{\partial \theta'}\frac{\partial r}{\partial \theta'}
++\frac{\partial \theta}{\partial \theta'}\frac{\partial \theta}{\partial \theta'}
++\frac{\partial z}{\partial \theta'}\frac{\partial z}{\partial \theta'}\\
+=&\frac{\partial \theta}{\partial \theta'}\frac{\partial \theta}{\partial \theta'}\\
+=&1
+\end{align*}
 
-The main idea in cloaking is to hide (cloak) a specific region of space from an
-incident wave. The goal is that after the wave passes through the cloak it is
-undistinguishable from the wave we would see if the object was not there,
-making the region inside the cloak effectively invisible.
+\begin{align*}
+Q_{22}
+=&\frac{\partial r}{\partial z'}\frac{\partial r}{\partial z'}
++\frac{\partial \theta}{\partial z'}\frac{\partial \theta}{\partial z'}
++\frac{\partial z}{\partial z'}\frac{\partial z}{\partial z'}\\
+=&\frac{\partial z}{\partial z'}\frac{\partial z}{\partial z'}\\
+=&1
+\end{align*}
 
-Cloaking often focuses on electromagnetic waves, but it is possible to cloak
-mechanical waves too. For this project I would like to focus on magnetic
-cloaking, i.e. the goal here is to take a magnet and put it inside our cloak,
-then we should be able to move the cloak (with the magnet inside it) through a
-magnetic field as if it were a non-magnetic material, i.e. the magnetic field
-should not exert any force on the magnet (nor the cloak!) and vice versa.
-
-There are different ways to approach this, one option is to use geometrical
-transformations; this technique uses the fact that Maxwell's equations are form
-invariant under change of coordinates. The procedure is as follows:
-\begin{enumerate}
-\item
-
-Make a geometric transformation that distorts the space in a way that avoids
-the region we want to cloak.
-
-\item
-
-Apply this geometric transformation to Maxwell's equations.
-
-\item
-
-In this new coordinate system, modify Maxwell's equations to have the same
-form they did in the original coordinates (this will change the constants of
-the equation).
-
-\item
-
-The constants obtained in the previous step will tell us the material
-properties we need for our cloak, then we can try to build it.
-
-\end{enumerate}
-
-
-With this application in mind what I would like to do for the project is to
-understand and explain the differential geometry part, focusing on steps two 2
-and 3.
-\cite{ward96}
-
-\printbibliography
+For $Q_{ij}$ where $i\neq j$ we have $Q_{ij}=0$. So our matrix $Q$ is
+\[
+  Q=\begin{bmatrix}
+    \left(\frac{R_2}{R_2-R_1}\right)^2 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+  \end{bmatrix}
+\]
+% \printbibliography
 
 \end{document}
