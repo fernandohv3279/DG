@@ -73,6 +73,26 @@ For $Q_{ij}$ where $i\neq j$ we have $Q_{ij}=0$. So our matrix $Q$ is
     0 & 0 & 1
   \end{bmatrix}
 \]
+
+Now we need the unit vectors that point along each axis. They are $u_1=\hat{r},u_2=\hat{\theta},u_3=\hat{z}$.
+
+then
+\[
+  g^{-1}=
+  [u_iu_j]=
+  \begin{bmatrix}
+    \hat{r}\cdot\hat{r} & \hat{r}\cdot\hat{\theta} & \hat{r}\cdot\hat{z}\\
+    \hat{\theta}\cdot\hat{r} & \hat{\theta}\cdot\hat{\theta} & \hat{\theta}\cdot\hat{z}\\
+    \hat{z}\cdot\hat{r} & \hat{z}\cdot\hat{\theta} & \hat{z}\cdot\hat{z}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & 1
+  \end{bmatrix}
+\]
+
 % \printbibliography
 
 \end{document}
