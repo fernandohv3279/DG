@@ -92,6 +92,33 @@ then
     0 & 0 & 1
   \end{bmatrix}
 \]
+Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
+\begin{align*}
+  \hat{\mu}_{11}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_1^{-2}
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_2Q_3Q_1^{-1}\\
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_1^{-1}\\
+  &=\mu|u_1\cdot\hat{r}|Q_1^{-1}\\
+  &=\mu Q_1^{-1}\qquad (???????)\\
+  &=\mu \frac{R_2-R_1}{R_2}
+\end{align*}
+
+\begin{align*}
+  \hat{\mu}_{22}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_2^{-2}
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_3Q_2^{-1}\\
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
+  &=\mu|u_1\cdot\hat{r}|Q_1\\
+  &=\mu Q_1\qquad (???????)\\
+  &=\mu \frac{R_2}{R_2-R_1}
+\end{align*}
+
+\begin{align*}
+  \hat{\mu}_{33}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_3^{-2}
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3^{-1}\\
+  &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
+  &=\mu|u_1\cdot\hat{r}|Q_1\\
+  &=\mu Q_1\qquad (???????)\\
+  &=\mu \frac{R_2}{R_2-R_1}
+\end{align*}
 
 % \printbibliography
 
