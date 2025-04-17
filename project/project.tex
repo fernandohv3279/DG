@@ -21,14 +21,13 @@
 % TODO: Improve all titiles
 \section{Discalimer}
 % TODO: Should I write this?
-If I write ``we" or ``I" it is just
-because it is easier to write that way. I am not caliming
-I did any of this, in fact I did absolutely nothing.
+I did absolutely nothing. We=they.
 \section{Intro}
 % TODO: put some bs here
 \blindtext[1]
 \section{Theory}
-This section was taken from \cite{ward96}.
+This section was taken from \cite{ward96}, specifically sections 1 and 2.
+
 We start with Maxewell's equations:
 \begin{align*}
   \nabla \times \textbf{E} &= -\mu \mu_0 \partial \textbf{H} /\partial t\\
@@ -38,6 +37,16 @@ and then consider a transformation
 \[
 q_1(x,y,z), \quad q_2(x,y,z), \quad q_3(x,y,z).
 \]
+
+\textbf{Question:} What form does the new set of equations take when
+expressed in terms of $q_1,q_2,q_3$?
+
+\textbf{Answer:} In the new system of coordinates, Maxwell's equations become
+\begin{align*}
+  \nabla_q \times \widehat{\textbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\textbf{H}} \textbf{*}\partial t\quad (\text{What is the asterisk notation???})\\
+\nabla_q \times \widehat{\textbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\textbf{E}}\textbf{*}\partial t,\quad (\text{Why is there a - here???})
+\end{align*}
+Where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\textbf{E}},\hat{\textbf{H}}$ are renormalized electric and magnetic fields. (What does this mean??? renormalized???)
 \section{Geometric transformation 1}
 Let's do the computation in \cite{ward96} with the following transformation:
 \[\begin{cases}
@@ -71,7 +80,7 @@ Q_{22}
 \end{align*}
 
 \begin{align*}
-Q_{22}
+Q_{33}
 =&\frac{\partial r}{\partial z'}\frac{\partial r}{\partial z'}
 +\frac{\partial \theta}{\partial z'}\frac{\partial \theta}{\partial z'}
 +\frac{\partial z}{\partial z'}\frac{\partial z}{\partial z'}\\
@@ -112,7 +121,7 @@ Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
   &=\mu|u_1\cdot(u_2\times u_3)|Q_2Q_3Q_1^{-1}\\
   &=\mu|u_1\cdot(u_2\times u_3)|Q_1^{-1}\\
   &=\mu|u_1\cdot\hat{r}|Q_1^{-1}\\
-  &=\mu Q_1^{-1}\qquad (???????)\\
+  &=\mu Q_1^{-1}\qquad (???)\\
   &=\mu \frac{R_2-R_1}{R_2}
 \end{align*}
 
@@ -121,7 +130,7 @@ Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
   &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_3Q_2^{-1}\\
   &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
   &=\mu|u_1\cdot\hat{r}|Q_1\\
-  &=\mu Q_1\qquad (???????)\\
+  &=\mu Q_1\qquad (????)\\
   &=\mu \frac{R_2}{R_2-R_1}
 \end{align*}
 
@@ -130,7 +139,7 @@ Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
   &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3^{-1}\\
   &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
   &=\mu|u_1\cdot\hat{r}|Q_1\\
-  &=\mu Q_1\qquad (???????)\\
+  &=\mu Q_1\qquad (????)\\
   &=\mu \frac{R_2}{R_2-R_1}
 \end{align*}
 
