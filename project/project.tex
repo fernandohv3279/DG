@@ -13,7 +13,8 @@
 \begin{document}
 
 \newcommand{\R}{\mathbb{R}}
-\newcommand\myworries[1]{\textcolor{red}{\textbf{#1}}}
+\newcommand\tbf[1]{\textbf{#1}}
+\newcommand\myworries[1]{\textcolor{red}{\tbf{#1}}}
 % \renewcommand\myworries[1]{}
 
 \title{An application of differential geometry to magnetic cloaking}
@@ -29,26 +30,30 @@ I did absolutely nothing. We=they.
 \blindtext[1]
 \section{Theory}
 This section was taken from \cite{ward96}, specifically sections 1 and 2.
-
+\myworries{\\Reorganize this section??}
+\subsection{Summary of section 1 from pendry's article}
 We start with Maxewell's equations:
 \begin{align*}
-  \nabla \times \textbf{E} &= -\mu \mu_0 \partial \textbf{H} /\partial t\\
-  \nabla \times \textbf{H} &= +\varepsilon \varepsilon_0 \partial \textbf{E} /\partial t,
+  \nabla \times \tbf{E} &= -\mu \mu_0 \partial \tbf{H} /\partial t\\
+  \nabla \times \tbf{H} &= +\varepsilon \varepsilon_0 \partial \tbf{E} /\partial t,
 \end{align*}
 and then consider a transformation
 \[
 q_1(x,y,z), \quad q_2(x,y,z), \quad q_3(x,y,z).
 \]
 
-\textbf{Question:} What form does the new set of equations take when
+\tbf{Question:} What form does the new set of equations take when
 expressed in terms of $q_1,q_2,q_3$?
 
-\textbf{Answer:} In the new system of coordinates, Maxwell's equations become
+\tbf{Answer:} In the new system of coordinates, Maxwell's equations become
 \begin{align*}
-  \nabla_q \times \widehat{\textbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\textbf{H}} \textbf{*}\partial t \myworries{ What is the asterisk notation?}\\
-  \nabla_q \times \widehat{\textbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\textbf{E}}\textbf{*}\partial t \myworries{ Why is there a - here?},
+  \nabla_q \times \widehat{\tbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\tbf{H}} \tbf{*}\partial t \myworries{ What is the asterisk notation?}\\
+  \nabla_q \times \widehat{\tbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\tbf{E}}\tbf{*}\partial t \myworries{ Why is there a - here?},
 \end{align*}
-where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\textbf{E}},\hat{\textbf{H}}$ are renormalized electric and magnetic fields. \myworries{What does this mean? Renormalized?}
+where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\tbf{E}},\hat{\tbf{H}}$ are renormalized electric and magnetic fields.\myworries{ What does this mean? Renormalized?}
+In other words, the form of Maxewell's equations is preserved by a coordinate transformation, it just changes the definition of $\varepsilon,\mu$.
+\subsection{Summary of section 2 from pendry's article}
+We define three unit vectors $\tbf{u}_1,\tbf{u}_2,\tbf{u}_3$
 \section{Geometric transformation 1}
 Let's do the computation in \cite{ward96} with the following transformation:
 \[\begin{cases}
