@@ -6,24 +6,26 @@
 \usepackage{biblatex}
 \usepackage{blindtext}
 \usepackage{mathtools}
+\usepackage{xcolor}
 
 \addbibresource{project.bib}
 
 \begin{document}
 
 \newcommand{\R}{\mathbb{R}}
+\newcommand\myworries[1]{\textcolor{red}{\textbf{#1}}}
+% \renewcommand\myworries[1]{}
 
 \title{An application of differential geometry to magnetic cloaking}
 \author{Fernando}
 \date{\today}
 \maketitle
 
-% TODO: Improve all titiles
+\myworries{Improve titles}
 \section{Discalimer}
-% TODO: Should I write this?
 I did absolutely nothing. We=they.
+\myworries{How to write this?}
 \section{Intro}
-% TODO: put some bs here
 \blindtext[1]
 \section{Theory}
 This section was taken from \cite{ward96}, specifically sections 1 and 2.
@@ -43,10 +45,10 @@ expressed in terms of $q_1,q_2,q_3$?
 
 \textbf{Answer:} In the new system of coordinates, Maxwell's equations become
 \begin{align*}
-  \nabla_q \times \widehat{\textbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\textbf{H}} \textbf{*}\partial t\quad (\text{What is the asterisk notation???})\\
-\nabla_q \times \widehat{\textbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\textbf{E}}\textbf{*}\partial t,\quad (\text{Why is there a - here???})
+  \nabla_q \times \widehat{\textbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\textbf{H}} \textbf{*}\partial t \myworries{ What is the asterisk notation?}\\
+  \nabla_q \times \widehat{\textbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\textbf{E}}\textbf{*}\partial t \myworries{ Why is there a - here?},
 \end{align*}
-Where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\textbf{E}},\hat{\textbf{H}}$ are renormalized electric and magnetic fields. (What does this mean??? renormalized???)
+where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\textbf{E}},\hat{\textbf{H}}$ are renormalized electric and magnetic fields. \myworries{What does this mean? Renormalized?}
 \section{Geometric transformation 1}
 Let's do the computation in \cite{ward96} with the following transformation:
 \[\begin{cases}
