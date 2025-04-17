@@ -32,7 +32,7 @@ I did absolutely nothing. We=they.
 This section was taken from \cite{ward96}, specifically sections 1 and 2.
 \myworries{\\Reorganize this section??}
 \subsection{Summary of section 1 from pendry's article}
-We start with Maxewell's equations:
+We start with Maxewell's equations:\myworries{ Is this in Cartesian coordinates? Should we start with cylindrical?}
 \begin{align*}
   \nabla \times \tbf{E} &= -\mu \mu_0 \partial \tbf{H} /\partial t\\
   \nabla \times \tbf{H} &= +\varepsilon \varepsilon_0 \partial \tbf{E} /\partial t,
@@ -53,20 +53,40 @@ expressed in terms of $q_1,q_2,q_3$?
 where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\tbf{E}},\hat{\tbf{H}}$ are renormalized electric and magnetic fields.\myworries{ What does this mean? Renormalized?}
 In other words, the form of Maxewell's equations is preserved by a coordinate transformation, it just changes the definition of $\varepsilon,\mu$.
 \subsection{Summary of section 2 from pendry's article}
-We define three unit vectors $\tbf{u}_1,\tbf{u}_2,\tbf{u}_3$
+We define three unit vectors $\tbf{u}_1,\tbf{u}_2,\tbf{u}_3,$ to point along the generalized $q_1,q_2,q_3$ axes.
+We also define
+\begin{equation}\label{matrixQ}
+  Q_{ij}=\frac{\partial x}{\partial q_i}\frac{\partial x}{\partial q_j}+\frac{\partial y}{\partial q_i}\frac{\partial y}{\partial q_j}+\frac{\partial z}{\partial q_i}\frac{\partial z}{\partial q_j},
+\end{equation}
+For convenience we will denote $Q_i=\sqrt{Q_{ii}}$.\myworries{ Why take the +? check eq 7. Is this complex?}
+Another definition we need is
+\begin{equation}\label{matrixg}
+  g^{-1}=[u_i\cdot u_j]=\begin{bmatrix}
+    \tbf{u}_1\cdot \tbf{u}_1 & \tbf{u}_1\cdot \tbf{u}_2 & \tbf{u}_1\cdot \tbf{u}_3 \\
+    \tbf{u}_2\cdot \tbf{u}_1 & \tbf{u}_2\cdot \tbf{u}_2 & \tbf{u}_2\cdot \tbf{u}_3 \\
+    \tbf{u}_3\cdot \tbf{u}_1 & \tbf{u}_3\cdot \tbf{u}_2 & \tbf{u}_3\cdot \tbf{u}_3
+  \end{bmatrix}.
+\end{equation}
+Now we are ready to define $\hat{\mu},\hat{\varepsilon}$. According to \cite{ward96} they are
+\begin{align}
+  \hat{\mu}^{ij}=\mu g^{ij}|\tbf{u}_1\cdot(\tbf{u}_2\times \tbf{u}_3)|Q_1Q_2Q_3(Q_iQ_j)^{-1}\\
+  \hat{\varepsilon}^{ij}=\varepsilon g^{ij}|\tbf{u}_1\cdot(\tbf{u}_2\times \tbf{u}_3)|Q_1Q_2Q_3(Q_iQ_j)^{-1} \nonumber
+\end{align}
+
 \section{Geometric transformation 1}
-Let's do the computation in \cite{ward96} with the following transformation:
+Let's apply the formulas from the previous section to following transformation:
 \[\begin{cases}
-r'=R_1+r(R_2-R_1)/R_2\\
-\theta'=\theta\\
-z'=z\\
+q_1(r,\theta,z)=R_1+r(R_2-R_1)/R_2\\
+q_2(r,\theta,z)=\theta\\
+q_3(r,\theta,z)=z\\
 \end{cases}\]
+\myworries{Should this be in terms of $x,y,x$?\\}
 In terms of the original variables this is
 \[\begin{cases}
-r=\frac{r'-R_1}{R_2-R_1}R_2=\frac{R_2}{R_2-R_1}r'-\frac{R_1R_2}{R_2-R_1}\\
-\theta=\theta'\\
-z=z'\\
-\end{cases}\]
+r=\frac{q_1-R_1}{R_2-R_1}R_2=\frac{R_2}{R_2-R_1}q_1-\frac{R_1R_2}{R_2-R_1}\\
+\theta=q_2\\
+z=q_3\\
+\end{cases}.\]
 Then following the formula from \cite{ward96} we have
 \begin{align*}
 Q_{11}
