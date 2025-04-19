@@ -1,7 +1,9 @@
 \documentclass{article}
+
+\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsfonts}
+\usepackage{graphicx}
 \usepackage{graphicx}
 \usepackage{xcolor}
 
@@ -16,10 +18,10 @@
 
 \section*{\#1}
 \subsection*{(a)}
-In this case it is enought to prove that when we take the Lie bracket of two
+In this case it is enough to prove that when we take the Lie bracket of two
 right invariant vector fields we get a right invariant vector field.
 
-Applying Lemma 3.3.7 with $M=N=G$ and $f=R_g$ immediatly gives us
+Applying Lemma 3.3.7 with $M=N=G$ and $f=R_g$ immediately gives us
 \[
   (dR_g)_h([X,Y](h))=[X,Y](hg),
 \]
@@ -27,13 +29,34 @@ which is what we wanted.
 \subsection*{(b)}
 By hypothesis
 \[
-  (dL_g)(X)=X
+  (dL_g)(X)=X,
 \]
-Then we apply dinv on both sides to get
-\[
-  \text{dinv}(dL_g(X))=\text{dinv}(X)
-\]
+then applying dinv on both sides we get
+\begin{align*}
+  d\text{inv}(dL_g(X))&=d\text{inv}(X)\\
+  d(\text{inv}\circ L_g)(X)&=d\text{inv}(X)\\
+  d(R_{g^{-1}}\circ \text{inv})(X)&=d\text{inv}(X)\\
+  (dR_{g^{-1}})(d\text{inv}(X))&=d\text{inv}(X),
+\end{align*}
+similar to theorem 3.3.7.
+
+In order to see that $d\text{inv}(X)_e=-X_e$ I used the following results I found in
+``Foundations of differential manifolds and Lie groups" by Frank Warner. There is
+probably a simpler way to do this but I don't know.\\
+\includegraphics[width=\textwidth]{diagram.png}
+\includegraphics[width=\textwidth]{properties.png}
+
+Then according to theorem 3.32 above ($\varphi=$inv) we have
+\begin{align*}
+  \text{inv}(\exp(X))&=\exp(\text{inv}(X))\\
+  (\exp(X))^{-1}&=\exp(\text{inv}(X))\\
+  \exp(-X)&=\exp(\text{inv}(X)),
+\end{align*}
+where we used theorem 3.31.c above for the last line.
+
+By the injectivity of the exponential map we have the result.
 \subsection*{(c)}
+
 \section*{\#2}
 \section*{\#3}
 \subsection*{(a)}
