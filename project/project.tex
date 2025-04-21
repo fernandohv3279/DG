@@ -31,7 +31,7 @@ I did absolutely nothing. We=they.
 \section{Theory}
 This section was taken from \cite{ward96}, specifically sections 1 and 2.
 \myworries{\\Reorganize this section??}
-\subsection{Summary of section 1 from pendry's article}
+\subsection{Summary of section 1 from Pendry's article}
 We start with Maxewell's equations:\myworries{ Is this in Cartesian coordinates? Should we start with cylindrical?}
 \begin{align*}
   \nabla \times \tbf{E} &= -\mu \mu_0 \partial \tbf{H} /\partial t\\
@@ -47,18 +47,19 @@ expressed in terms of $q_1,q_2,q_3$?
 
 \tbf{Answer:} In the new system of coordinates, Maxwell's equations become
 \begin{align*}
-  \nabla_q \times \widehat{\tbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\tbf{H}} \tbf{*}\partial t \myworries{ What is the asterisk notation?}\\
-  \nabla_q \times \widehat{\tbf{H}} &= -\varepsilon_0 \hat{\varepsilon} \partial \widehat{\tbf{E}}\tbf{*}\partial t \myworries{ Why is there a - here?},
+  \nabla_q \times \widehat{\tbf{E}} &= -\mu_0\hat{\mu} \partial \widehat{\tbf{H}}/\partial t\\
+  \nabla_q \times \widehat{\tbf{H}} &= +\varepsilon_0 \hat{\varepsilon} \partial \widehat{\tbf{E}}/\partial t,
 \end{align*}
-where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\hat{\tbf{E}},\hat{\tbf{H}}$ are renormalized electric and magnetic fields.\myworries{ What does this mean? Renormalized?}
+where $\hat{\mu}$ and $\hat{\varepsilon}$ are in general tensors and $\widehat{\tbf{E}},\widehat{\tbf{H}}$ are the transformed versions of \tbf{E,H}
 In other words, the form of Maxewell's equations is preserved by a coordinate transformation, it just changes the definition of $\varepsilon,\mu$.
-\subsection{Summary of section 2 from pendry's article}
+\subsection{Summary of section 2 from Pendry's article}
 We define three unit vectors $\tbf{u}_1,\tbf{u}_2,\tbf{u}_3,$ to point along the generalized $q_1,q_2,q_3$ axes.
 We also define
 \begin{equation}\label{matrixQ}
   Q_{ij}=\frac{\partial x}{\partial q_i}\frac{\partial x}{\partial q_j}+\frac{\partial y}{\partial q_i}\frac{\partial y}{\partial q_j}+\frac{\partial z}{\partial q_i}\frac{\partial z}{\partial q_j},
 \end{equation}
-For convenience we will denote $Q_i=\sqrt{Q_{ii}}$.\myworries{ Why take the +? check eq 7. Is this complex?}
+For convenience we will denote $Q_i=\sqrt{Q_{ii}}$.
+
 Another definition we need is
 \begin{equation}\label{matrixg}
   g^{-1}=[u_i\cdot u_j]=\begin{bmatrix}
@@ -74,68 +75,89 @@ Now we are ready to define $\hat{\mu},\hat{\varepsilon}$. According to \cite{war
 \end{align}
 
 \section{Geometric transformation 1}
-Let's apply the formulas from the previous section to following transformation:
+The transformation we want is the following
 \[\begin{cases}
-q_1(r,\theta,z)=R_1+r(R_2-R_1)/R_2\\
-q_2(r,\theta,z)=\theta\\
-q_3(r,\theta,z)=z\\
+  q_1(r,\theta,z)=a+r(b-a)/b\\
+  q_2(r,\theta,z)=\theta\\
+  q_3(r,\theta,z)=z\\
 \end{cases}\]
-\myworries{Should this be in terms of $x,y,x$?\\}
-In terms of the original variables this is
+Notice that it is writen in terms of cylindrical coordinates
+(from cylindrical to cylindrical), but we can move from cylindrical
+to cartesian with the usual change of variables:
+\begin{equation}
+  \begin{cases}\label{cylindrical}
+  x=r\cos\theta\\
+  y=r\sin\theta\\
+  z=z\\
+\end{cases}
+\end{equation}
+
+Let's apply the formulas from the previous section to the transformation:
 \[\begin{cases}
-r=\frac{q_1-R_1}{R_2-R_1}R_2=\frac{R_2}{R_2-R_1}q_1-\frac{R_1R_2}{R_2-R_1}\\
+  q_1(x,y,z)=a+r(b-a)/b\\
+  q_2(x,y,z)=\theta\\
+q_3(x,y,z)=z\\
+\end{cases}.\]
+Here I kept the transformation in terms of $r,\theta,z$ in order to have cleaner looking formulas.
+We can write $r,\theta,z$ in terms of $x,y,z$ if we wanted.
+
+Now we neeq $x,y,z$ in terms of $q_1,q_2,q_3$, for this we note that:
+\[\begin{cases}
+r=\frac{q_1-a}{b-a}b=\frac{b}{b-a}q_1-\frac{ba}{b-a}\\
 \theta=q_2\\
 z=q_3\\
 \end{cases}.\]
-Then following the formula from \cite{ward96} we have
+Again this is in terms of $r,\theta,z$ for simplicity, but combining this with (\ref{cylindrical})
+we get $x,y,z$ in terms of $q_1,q_2,q_3$.
+
+Now we use (\ref{matrixQ}) to compute $Q_{ij}$.
 \begin{align*}
 Q_{11}
-=&\frac{\partial r}{\partial r'}\frac{\partial r}{\partial r'}
-+\frac{\partial \theta}{\partial r'}\frac{\partial \theta}{\partial r'}
-+\frac{\partial z}{\partial r'}\frac{\partial z}{\partial r'}\\
-=&\frac{\partial r}{\partial r'}\frac{\partial r}{\partial r'}\\
-=&\left(\frac{R_2}{R_2-R_1}\right)^2
+=&\frac{\partial x}{\partial q_1}\frac{\partial x}{\partial q_1}
++\frac{\partial y}{\partial q_1}\frac{\partial y}{\partial q_1}
++\frac{\partial z}{\partial q_1}\frac{\partial z}{\partial q_1}\\
+=&\left(\frac{\partial x}{\partial q_1}\right)^2+\left(\frac{\partial y}{\partial q_1}\right)^2+0\\
+=&\left(\frac{\partial (r\cos\theta)}{\partial q_1}\right)^2+\left(\frac{\partial (r\sin\theta)}{\partial q_1}\right)^2\\
+=&\left(\cos\theta\frac{\partial r}{\partial q_1}\right)^2+\left(\sin\theta\frac{\partial r}{\partial q_1}\right)^2\\
+=&\left(\frac{\partial r}{\partial q_1}\right)^2\\
+=&\left(\frac{b}{b-a}\right)^2
 \end{align*}
 
 \begin{align*}
 Q_{22}
-=&\frac{\partial r}{\partial \theta'}\frac{\partial r}{\partial \theta'}
-+\frac{\partial \theta}{\partial \theta'}\frac{\partial \theta}{\partial \theta'}
-+\frac{\partial z}{\partial \theta'}\frac{\partial z}{\partial \theta'}\\
-=&\frac{\partial \theta}{\partial \theta'}\frac{\partial \theta}{\partial \theta'}\\
-=&1
+=&\frac{\partial x}{\partial q_2}\frac{\partial x}{\partial q_2}
++\frac{\partial y}{\partial q_2}\frac{\partial y}{\partial q_2}
++\frac{\partial z}{\partial q_2}\frac{\partial z}{\partial q_2}\\
+=&\left(\frac{\partial x}{\partial q_2}\right)^2+\left(\frac{\partial y}{\partial q_2}\right)^2+0\\
+=&\left(r\frac{\partial \cos\theta}{\partial q_2}\right)^2+\left(r\frac{\partial \sin\theta}{\partial q_2}\right)^2\\
+=&\left(-r\sin\theta\frac{\partial \theta}{\partial q_2}\right)^2+\left(r\cos\theta\frac{\partial \theta}{\partial q_2}\right)^2\\
+=&r^2\left(\frac{\partial \theta}{\partial q_2}\right)^2\\
+=&r^2
 \end{align*}
 
 \begin{align*}
 Q_{33}
-=&\frac{\partial r}{\partial z'}\frac{\partial r}{\partial z'}
-+\frac{\partial \theta}{\partial z'}\frac{\partial \theta}{\partial z'}
-+\frac{\partial z}{\partial z'}\frac{\partial z}{\partial z'}\\
-=&\frac{\partial z}{\partial z'}\frac{\partial z}{\partial z'}\\
+=&\frac{\partial r}{\partial q_3}\frac{\partial r}{\partial q_3}
++\frac{\partial \theta}{\partial q_3}\frac{\partial \theta}{\partial q_3}
++\frac{\partial z}{\partial q_3}\frac{\partial z}{\partial q_3}\\
+=&0+0+1\\
 =&1
 \end{align*}
 
 For $Q_{ij}$ where $i\neq j$ we have $Q_{ij}=0$. So our matrix $Q$ is
 \[
   Q=\begin{bmatrix}
-    \left(\frac{R_2}{R_2-R_1}\right)^2 & 0 & 0\\
-    0 & 1 & 0\\
+    \left(\frac{b}{b-a}\right)^2 & 0 & 0\\
+    0 & r^2 & 0\\
     0 & 0 & 1
   \end{bmatrix}
 \]
 
-Now we need the unit vectors that point along each axis. They are $u_1=\hat{r},u_2=\hat{\theta},u_3=\hat{z}$.
-
+Now we need the unit vectors that point along each axis. They are $u_1=\widehat{q_1},u_2=\widehat{q_2},u_3=\widehat{q_3}$,
 then
 \[
   g^{-1}=
   [u_iu_j]=
-  \begin{bmatrix}
-    \hat{r}\cdot\hat{r} & \hat{r}\cdot\hat{\theta} & \hat{r}\cdot\hat{z}\\
-    \hat{\theta}\cdot\hat{r} & \hat{\theta}\cdot\hat{\theta} & \hat{\theta}\cdot\hat{z}\\
-    \hat{z}\cdot\hat{r} & \hat{z}\cdot\hat{\theta} & \hat{z}\cdot\hat{z}
-  \end{bmatrix}
-  =
   \begin{bmatrix}
     1 & 0 & 0\\
     0 & 1 & 0\\
