@@ -24,17 +24,18 @@
 \section{Desired result}
 
 According to \cite{smith06} the transformation
-\[\begin{cases}
+\begin{equation}\label{THEtransCyl}
+  \begin{cases}
   r'=a+r(b-a)/b\\
   \theta'=\theta\\
   z'=z\\
-\end{cases}\]
+\end{cases}\end{equation}
 gives the following parameters
-\[\begin{cases}
+\begin{equation}\begin{cases}
   \varepsilon_r=\mu_r=\frac{r-a}{r}\\
   \varepsilon_\theta=\mu_\theta=\frac{r}{r-a}\\
   \varepsilon_z=\mu_z=\left(\frac{b}{b-a}\right)^2\frac{r-a}{r}\\
-\end{cases}\]
+\end{cases}\end{equation}
 I would like to understand this computation.
 
 \section{Computing the parameters}
@@ -45,12 +46,60 @@ Such formulas are (here we assume that permeability and permitivity are both 1):
 \end{equation}
 Now let's figure out each of the terms in this expression.
 
-To obtain the parameters we need to the following quantities:
-
+\subsection{Computing $Q_i$} If we change to a coordinate system
+\[q_1(x,y,z),q_2(x,y,z),q_3(x,y,z)\]
+then \cite{ward96} defines
 \begin{equation}\label{matrixQ}
   Q_{ij}=\frac{\partial x}{\partial q_i}\frac{\partial x}{\partial q_j}+\frac{\partial y}{\partial q_i}\frac{\partial y}{\partial q_j}+\frac{\partial z}{\partial q_i}\frac{\partial z}{\partial q_j},
 \end{equation}
-and for convenience they denote $Q_i=\sqrt{Q_{ii}}$.
+and then $Q_i=\sqrt{Q_{ii}}$.
+
+Let's compute these quantities for transformation (\ref{THEtransCyl}).
+
+The first observation is that the transformation is written in terms of cylindrical coordinates,
+but since we know that $r=\sqrt{x^2+y^2},\theta=\tan^{-1}(y/x)$, we can write
+\[\begin{cases}
+  q_1(x,y,z)=a+r(x,y)(b-a)/b\\
+  q_2(x,y,z)=\theta(x,y)\\
+  q_3(x,y,z)=z\\
+\end{cases}\]
+Inverting this we get:
+\[\begin{cases}
+  r=(q_1-a)b/(b-a)\\
+  \theta=q_2\\
+  z=q_3\\
+\end{cases}\]
+And since $x=r\cos\theta,y=r\sin\theta$ then we can perform the following computations
+\begin{itemize}
+  \item $\frac{\partial x}{\partial q_1}=\frac{\partial (r\cos\theta)}{\partial q_1}=\cos\theta\frac{\partial r}{\partial q_1}=\frac{b}{b-a}\cos\theta$
+  \item $\frac{\partial y}{\partial q_1}=\frac{\partial (r\sin\theta)}{\partial q_1}=\sin\theta\frac{\partial r}{\partial q_1}=\frac{b}{b-a}\sin\theta$
+  \item $\frac{\partial z}{\partial q_1}=0$
+  \item $\frac{\partial x}{\partial q_2}=\frac{\partial (r\cos\theta)}{\partial q_2}=r\frac{\partial \cos\theta}{\partial q_2}=-r\sin\theta$
+  \item $\frac{\partial y}{\partial q_2}=\frac{\partial (r\sin\theta)}{\partial q_2}=r\frac{\partial \sin\theta}{\partial q_2}=r\cos\theta$
+  \item $\frac{\partial z}{\partial q_2}=0$
+  \item $\frac{\partial x}{\partial q_3}=0$
+  \item $\frac{\partial y}{\partial q_3}=0$
+  \item $\frac{\partial z}{\partial q_3}=1$
+\end{itemize}
+Now we can compute $Q_{ij}$ and we get:
+\begin{itemize}
+  \item $Q_{11}=\left(\frac{b}{b-a}\right)^2$
+  \item $Q_{12}=Q_{21}=0$
+  \item $Q_{13}=Q_{31}=0$
+  \item $Q_{22}=r^2$
+  \item $Q_{23}=Q_{32}=0$
+  \item $Q_{33}=1$
+\end{itemize}
+So the matrix we obtain is:
+\[
+  Q=\begin{bmatrix}
+    \left(\frac{b}{b-a}\right)^2 & 0 & 0\\
+    0 & r^2 & 0\\
+    0 & 0 & 1
+  \end{bmatrix}.
+\]
+
+\subsection{Computing $u_i$}
 
 We define three unit vectors $\tbf{u}_1,\tbf{u}_2,\tbf{u}_3,$ to point along the generalized $q_1,q_2,q_3$ axes.
 We also define
@@ -140,6 +189,7 @@ Q_{33}
 \end{align*}
 
 For $Q_{ij}$ where $i\neq j$ we have $Q_{ij}=0$. So our matrix $Q$ is
+
 \[
   Q=\begin{bmatrix}
     \left(\frac{b}{b-a}\right)^2 & 0 & 0\\
