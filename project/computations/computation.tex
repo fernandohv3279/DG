@@ -140,8 +140,30 @@ We compute them using (\ref{THEtransCart}):\myworries{ I suspect this is where t
   \frac{b-a}{b}\cos\theta & \frac{b-a}{b}\sin\theta & 0\\
   -\frac{\sin\theta}{r}& \frac{\cos\theta}{r} & 0\\
   0 & 0 & 1
-\end{bmatrix}
+\end{bmatrix},
 \end{align*}
+then
+\begin{align}
+  |u_1\cdot(u_2\times u_3)|=
+  \left|
+  \begin{bmatrix}
+    \frac{b-a}{b}\cos\theta\\
+    -\frac{\sin\theta}{r}\\
+    0\\
+  \end{bmatrix}
+  \cdot
+  \begin{bmatrix}
+    \frac{\cos\theta}{r}\\
+    -\frac{b-a}{b}\sin\theta\\
+    0\\
+  \end{bmatrix}\right|
+  =\frac{1}{r}\frac{b-a}{b}|\cos^2\theta+\sin^2\theta|=\frac{1}{r}\frac{b-a}{b}.
+\end{align}
+
+
+\newpage
+
+
 Let's remember that the map we are working with is
 \[\begin{cases}
   q_1(x,y,z)=a+r(x,y)(b-a)/b\\
