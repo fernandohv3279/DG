@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\begin{document}
+
+\newcommand{\R}{\mathbb{R}}
+
+\title{HW4 MATH 670}
+\author{Fernando}
+\date{\today}
+\maketitle
+
+\section*{\#1}
+\section*{\#2}
+We can write the vector field in local coordinates like this
+\[
+  V=\sum v_kX_k
+\]
+then
+\[
+  V'(t)=\sum v_k'(t)X_k.
+\]
+On the other hand
+\[
+  \frac{DV}{dt}=\sum_{i,j,k}\left(\frac{dv_k}{dt}+\frac{d\alpha_i}{dt}v_j\Gamma^k_{ij}\right)X_k.
+\]
+In this case \(\frac{\partial d\alpha_i}{dt}=0\), so it doesn't matter what \(\Gamma^k_{ij}\) is. We will get:
+\[
+  \frac{DV}{dt}=\sum\frac{dv_k}{dt}X_k=\sum v_k'(t)X_k=V'(t).
+\]
+\section*{\#3}
+
+\end{document}
