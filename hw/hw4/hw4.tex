@@ -36,4 +36,45 @@ In this case \(\frac{\partial d\alpha_i}{dt}=0\), so it doesn't matter what \(\G
 \]
 \section*{\#3}
 
+\(\implies\)
+
+Let's take an orthonormal basis for \(T_{\alpha(t_0)}M\):
+\[\{v_1(t_0),\dots,v_n(t_0)\}\]
+Since \(\nabla\) is compatible with \(g\) we can parallel transport this basis along \(\alpha\),
+then
+\[
+  span\{v_1(t),\dots,v_n(t)\}=T_{\alpha(t)}M,
+\]
+so we can write \( V(t)=\sum\beta_iv_i(t), W(t)=\sum\gamma_iv_i(t)
+\) for \(\beta_i,\gamma_i\) smooth functions.
+
+now we see that
+\begin{align}
+  \label{eq:LHS}
+  \frac{d}{dt}\bigg|_{t=t_0}g_{\alpha(t)}(V(t),W(t))&=\sum_{ij}
+  \frac{d}{dt}\bigg|_{t=t_0}\beta_i\gamma_ig_{\alpha(t)}(v_i(t),v_j(t)) \nonumber\\
+  &=\sum\frac{d}{dt}\bigg|_{t=t_0}\beta_i\gamma_i \nonumber\\
+  &=\sum\gamma_i\frac{d\beta_i}{dt}\bigg|_{t=t_0}+\sum\beta_i\frac{d\gamma_i}{dt}\bigg|_{t=t_0}
+\end{align}
+
+On the other hand we have
+\begin{align}
+  \label{eq:RHS}
+  &g_{\alpha(t_0)}\left(\frac{dV}{dt},W(t)\right) + g_{\alpha(t_0)}\left(V(t),\frac{DW}{dt}\right) \nonumber\\
+  &= g_{\alpha(t_0)}\left(\sum\beta_i'v_i(t),W(t)\right) + g_{\alpha(t_0)}\left(V(t),\sum\gamma_i'v_i(t)\right)\nonumber\\
+  &= \sum g_{\alpha(t_0)}\left(\beta_i'v_i(t),W(t)\right) + \sum g_{\alpha(t_0)}\left(V(t),\gamma_i'v_i(t)\right)\nonumber\\
+  &= \sum\gamma_i\frac{d\beta_i}{dt}\bigg|_{t=t_0} + \sum\beta_i\frac{d\gamma_i}{dt}\bigg|_{t=t_0}
+\end{align}
+So by \eqref{eq:LHS} and \eqref{eq:RHS} we have the result.
+
+\(\impliedby\)
+
+Let \(V,W\) be parallel along \(\alpha\), then \(\frac{DV}{dt}=0=\frac{DW}{dt}\), so
+\begin{align*}
+  \frac{d}{dt}\bigg|_{t=t_0}g_{\alpha(t)}(V(t),W(t))&=g_{\alpha(t)}\left(\frac{DV}{dt},W\right)+g_{\alpha(t)}\left(V,\frac{DW}{dt}\right)\\
+  &=g_{\alpha(t)}\left(0,W\right)+g_{\alpha(t)}\left(V,0\right)\\
+  &=0.
+\end{align*}
+i.e. \(g_{\alpha(t)}(V(t),W(t))\) is constant.
+
 \end{document}
