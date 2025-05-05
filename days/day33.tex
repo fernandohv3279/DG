@@ -7,7 +7,7 @@ Given the name, you might expect that some of the key ideas in Riemannian geomet
 
 His idea for how to define curvature in a manifold was something like the following. Let $p \in M$ and consider $\sigma \subset T_pM$, a 2-dimensional subspace. Each line through the origin in $\sigma$ exponentiates out to give a geodesic in $M$, and by taking all such geodesics we get a surface $S$ in $M$ containing $p$ and tangent to $\sigma$ at $p$. The Riemannian metric on $M$ induces a Riemannian metric on $S$.
 
-Gauss had showed in 1827~\cite{gaussGeneralInvestigationsCurved2005} that the Gaussian curvature of a surface depends only on its First Fundamental Form (a.k.a., Riemannian metric); Riemann called this the curvature at $p$, denoted $K(p,\sigma)$. These days we call this curvature the \emph{sectional curvature} at $p$ with respect to $\sigma$.
+Gauss had showed in 1827~\cite{gaussGeneralInvestigationsCurved2005} that the Gauss curvature of a surface depends only on its First Fundamental Form (a.k.a., Riemannian metric); Riemann called this the curvature at $p$, denoted $K(p,\sigma)$. These days we call this curvature the \emph{sectional curvature} at $p$ with respect to $\sigma$.
 
 That said, Riemann did not give any way to compute this curvature and it took quite a long time to get a rigorous, modern definition. Unfortunately, Riemann's intuition, which hopefully makes sense, is not really evident in the modern definition, which seems very abstract. 
 
@@ -76,13 +76,13 @@ That said, I'm going to give you the modern definitions and try to connect it ba
 	so Euclidean space is reassuringly as un-curved as it is possible to be, and suggests that this notion of curvature is some sort of measure of how much the metric on $M$ deviates from being Euclidean.
 \end{example}
 
-\begin{example}
+\begin{example}\label{ex:curvature tensor on S^3}
 	Recall our vector fields $X, Y, Z$ on $S^3$ defined in \Cref{sec:S^3 example} as
 	\[
 		X(x) = xi, \quad Y(x) = xj, \quad Z(x) = xk
 	\]
 	at each $x \in S^3$.\footnote{I'm switching from $p$ to $x$ as the name of the point in $S^3$ because I'm going to think of points in $S^3$ as points in $\R^4$ and write them as $x = (x_1, x_2,x_3,x_4)$, where the $x_i$ are coordinate functions. This will make it more natural to write things like $\frac{\partial}{\partial x_i}(x_i) = 1$ rather than calling the coordinate functions $p_i$ and trying to remember that $\frac{\partial}{\partial x_i}(p_i) = 1$.} We showed in \Cref{sec:S^3 example} that
-	\begin{equation}\label{eq:Lie brackets on S^3}
+	\begin{equation}\label{eq:Lie brackets on S3}
 		[X,Y] = 2Z, \quad [Y,Z] = 2X, \quad [Z,X] = 2Y.
 	\end{equation}
 	
@@ -108,13 +108,13 @@ That said, I'm going to give you the modern definitions and try to connect it ba
 	which is already tangent to $S^3$, so orthogonal projection just gives $Z$ again, and we conclude that $\nabla_XY = Z$.
 	
 	By similar reasoning, we can compute
-	\begin{align}\label{eq:covariant derivatives on S^3}
+	\begin{align}\label{eq:covariant derivatives on S3}
 		\nabla_XX & = 0 & \nabla_XY & = Z  & \nabla_XZ & = -Y \nonumber\\
 		\nabla_YX & = -Z & \nabla_YY & = 0 &  \nabla_YZ & = X \\
 		\nabla_ZX & = Y & \nabla_ZY & = -X & \nabla_ZZ & = 0 \nonumber
 	\end{align}
 	
-	Therefore, we can use~\eqref{eq:Lie brackets on S^3} and~\eqref{eq:covariant derivatives on S^3} to see that
+	Therefore, we can use~\eqref{eq:Lie brackets on S3} and~\eqref{eq:covariant derivatives on S3} to see that
 	\begin{align*}
 		R(X,Y)X & = \nabla_X\nabla_YX - \nabla_Y\nabla_XX - \nabla_{[X,Y]}X \\
 		& = -\nabla_XZ - \nabla_Y 0 -\nabla_{2Z}X \\
@@ -122,12 +122,12 @@ That said, I'm going to give you the modern definitions and try to connect it ba
 		& = -Y,
 	\end{align*}
 	that
-	\begin{align*}
-		R(X,Y)Y & = \nabla_X\nabla_YY - \nabla_Y\nabla_XY - \nabla_{[X,Y]}Y \\
+	\begin{align} \label{eq:RXYY on S3}
+		R(X,Y)Y & = \nabla_X\nabla_YY - \nabla_Y\nabla_XY - \nabla_{[X,Y]}Y \nonumber \\
 		& = \nabla_X0 - \nabla_Y Z -\nabla_{2Z}Y \\
-		& = X+2X \\
-		& = X,
-	\end{align*}
+		& = X+2X \nonumber\\
+		& = X, \nonumber
+	\end{align}
 	and that
 	\begin{align*}
 		R(X,Y)Z & = \nabla_X\nabla_YZ - \nabla_Y\nabla_XZ - \nabla_{[X,Y]}Z \\
@@ -138,7 +138,7 @@ That said, I'm going to give you the modern definitions and try to connect it ba
 	Therefore, for each $x \in S^3$ the transformation $R(X,Y) \from T_x S^3 \to T_xS^3$ can be interpreted as the composition of orthogonal projection to the 2-plane spanned by $X$ and $Y$ and a clockwise rotation of this plane by $90^\circ$.
 \end{example}
 
-\begin{exercise}
+\begin{exercise}\label{ex:curvature transformation on S^3}
 	Work out similar interpretations of $R(X,Z)$ and $R(Y,Z)$ on $S^3$.
 \end{exercise}
 
@@ -269,19 +269,19 @@ Of course, we've defined everything in the presence of a Riemannian metric $g$, 
 	which implies the result.
 \end{proof}
 
-In local coordinates, if we write $X_i = \frac{\partial}{\partial X_i}$, then there exist smooth functions $R_{ijk}^s$ so that
+In local coordinates, if we write $X_i = \frac{\partial}{\partial x_i}$, then there exist smooth functions $R_{ijk}^s$ so that
 \[
-	R(X_i,X_j)X_k = \sum_s R_{ijk}^s X_s.
+	R(X_j,X_k)X_i = \sum_s R_{ijk}^s X_s.
 \]
 The functions $R_{ijk}^s$ are usually called the components of $R$ in the given local coordinates. If we have vector fields $U, V, W$ with local coordinate expressions
 \[
-	U = \sum_i u^i X_i, \quad V = \sum_j v^j X_j, \quad W = \sum_k w^kX_k
+	U = \sum_j u^j X_j, \quad V = \sum_k v^k X_k, \quad W = \sum_i w^iX_i
 \]
 (note that now I am being more careful about whether indices are superscripted or subscripted), then
 \[
-	R(U,V)W = \sum_{i,j,k,s} R_{ijk}^s u^i v^j w^k X_m.
+	R(U,V)W = \sum_{i,j,k,s} R_{ijk}^s u^j v^k w^i X_s.
 \]
-(In Einstein notation, this gets written as $R(U,V)W = R_{ijk}^s u^i v^j w^k X_m$, where summation always happens over repeated indices, and repeated indices should appear in up/down pairs.)
+(In Einstein notation, this gets written as $R(U,V)W = R_{ijk}^s u^j v^k w^i X_s$, where summation always happens over repeated indices, and repeated indices should appear in up/down pairs.)
 
 \begin{exercise}
 	Show that
@@ -292,14 +292,14 @@ The functions $R_{ijk}^s$ are usually called the components of $R$ in the given 
 
 When we lower an index and think of $R$ as a $(0,4)$-tensor, then we get components
 \[
-	R_{ijks} := g(R(X_i,X_j)X_k,X_s) = \left\langle \sum_{m}R_{ijk}^m X_m, X_s \right\rangle = \sum_m R_{ijk}^m g_{ms}.
+	R_{ijks} := g(R(X_k,X_s)X_i,X_j) = \left\langle \sum_{m}R_{iks}^m X_m, X_j \right\rangle = \sum_m R_{iks}^m g_{mj}.
 \]
 
 Then \Cref{prop:symmetries of curvature tensor} implies the following symmetries for the $R_{ijks}$:
 
 \begin{corollary}\label{cor:symmetries of curvature components}
 	\begin{enumerate}
-		\item $R_{ijks} + R_{jkis} + R_{kijs} = 0$
+		\item $R_{ijks} + R_{iksj} + R_{isjk} = 0$
 		\item $R_{ijks} = -R_{jiks}$
 		\item $R_{ijks} = -R_{ijsk}$
 		\item $R_{ijks} = R_{ksij}$.
