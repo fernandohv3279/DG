@@ -37,12 +37,11 @@ gives the following parameters
   \varepsilon_z=\mu_z=\left(\frac{b}{b-a}\right)^2\frac{r-a}{r}\\
 \end{cases}\end{equation}
 I would like to understand this computation.
-
 \section{Computing the parameters}
 This is explained in \cite{ward96}, where they present formulas for the new parameters.
 Such formulas are (here we assume that permeability and permitivity are both 1):
 \begin{equation}
-  \hat{\mu}^{ij}=\hat{\varepsilon}^{ij}=g^{ij}|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_3(Q_iQ_j)^{-1}.
+  \hat{\mu}^{ij}=\hat{\varepsilon}^{ij}=g^{ij}|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3(Q_iQ_j)^{-1}.
 \end{equation}
 Now let's figure out each of the terms in this expression.
 
@@ -92,13 +91,13 @@ Now we can compute $Q_{ij}$ and we get:
   \item $Q_{33}=1$
 \end{itemize}
 So the matrix we obtain is:
-\[
+\begin{equation}
   Q=\begin{bmatrix}
     \left(\frac{b}{b-a}\right)^2 & 0 & 0\\
     0 & r^2 & 0\\
     0 & 0 & 1
   \end{bmatrix}.
-\]
+\end{equation}
 
 \subsection{Computing $u_i$}
 
@@ -143,7 +142,7 @@ We compute them using (\ref{THEtransCart}):\myworries{ I suspect this is where t
 \end{bmatrix},
 \end{align*}
 then
-\begin{align}
+\begin{multline}
   |u_1\cdot(u_2\times u_3)|=
   \left|
   \begin{bmatrix}
@@ -156,68 +155,84 @@ then
     \frac{\cos\theta}{r}\\
     -\frac{b-a}{b}\sin\theta\\
     0\\
-  \end{bmatrix}\right|
-  =\frac{1}{r}\frac{b-a}{b}|\cos^2\theta+\sin^2\theta|=\frac{1}{r}\frac{b-a}{b}.
-\end{align}
+  \end{bmatrix}\right|\\
+  =\frac{1}{r}\frac{b-a}{b}|\cos^2\theta+\sin^2\theta|
+  =\frac{1}{r}\frac{b-a}{b}.
+\end{multline}
 
-
-\newpage
-
-
-Let's remember that the map we are working with is
-\[\begin{cases}
-  q_1(x,y,z)=a+r(x,y)(b-a)/b\\
-  q_2(x,y,z)=\theta(x,y)\\
-  q_3(x,y,z)=z\\
-\end{cases}\]
-
-Another definition we need is
-\begin{equation}\label{matrixg}
-  g^{-1}=[u_i\cdot u_j]=\begin{bmatrix}
+Finaly we need to find $g^{ij}$, which is defined as:
+\begin{align*}\label{matrixg}
+  g^{-1}&=[u_i\cdot u_j]\\
+  &=\begin{bmatrix}
     \tbf{u}_1\cdot \tbf{u}_1 & \tbf{u}_1\cdot \tbf{u}_2 & \tbf{u}_1\cdot \tbf{u}_3 \\
     \tbf{u}_2\cdot \tbf{u}_1 & \tbf{u}_2\cdot \tbf{u}_2 & \tbf{u}_2\cdot \tbf{u}_3 \\
     \tbf{u}_3\cdot \tbf{u}_1 & \tbf{u}_3\cdot \tbf{u}_2 & \tbf{u}_3\cdot \tbf{u}_3
-  \end{bmatrix}.
-\end{equation}
-
-Now we need the unit vectors that point along each axis. They are $u_1=\widehat{q_1},u_2=\widehat{q_2},u_3=\widehat{q_3}$,
-then
-\[
-  g^{-1}=
-  [u_iu_j]=
-  \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 1 & 0\\
+  \end{bmatrix}\\
+  &=\begin{bmatrix}
+    \left(\frac{b-a}{b}\right)^2\cos^2\theta + \frac{\sin^2\theta}{r^2} & \left(\frac{b-a}{b}\right)^2\sin\theta\cos\theta & 0\\
+    \left(\frac{b-a}{b}\right)^2\sin\theta\cos\theta & \left(\frac{b-a}{b}\right)^2\sin^2\theta + \frac{\cos^2\theta}{r^2} & 0\\
     0 & 0 & 1
-  \end{bmatrix}
-\]
-Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
-\begin{align*}
-  \hat{\mu}_{11}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_1^{-2}
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_2Q_3Q_1^{-1}\\
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_1^{-1}\\
-  &=\mu|u_1\cdot\hat{r}|Q_1^{-1}\\
-  &=\mu Q_1^{-1}\qquad (???)\\
-  &=\mu \frac{R_2-R_1}{R_2}
+  \end{bmatrix}\\
+  \implies
+  g&=\frac{1}{\det(g^{-1})}\begin{bmatrix}
+    \left(\frac{b-a}{b}\right)^2\sin^2\theta + \frac{\cos^2\theta}{r^2} & -\left(\frac{b-a}{b}\right)^2\sin\theta\cos\theta & 0\\
+    -\left(\frac{b-a}{b}\right)^2\sin\theta\cos\theta & \left(\frac{b-a}{b}\right)^2\cos^2\theta + \frac{\sin^2\theta}{r^2} & 0\\
+    0 & 0 & 1
+  \end{bmatrix}\\
+  % &=\left(\frac{b-a}{b}\right)^2\begin{bmatrix}
+  %   \cos^2\theta + \left(\frac{b}{b-a}\right)^2\frac{\sin^2\theta}{r^2} & \sin\theta\cos\theta & 0\\
+  %   \sin\theta\cos\theta & \sin^2\theta + \left(\frac{b}{b-a}\right)^2\frac{\cos^2\theta}{r^2} & 0\\
+  %   0 & 0 & \left(\frac{b}{b-a}\right)^2
+  % \end{bmatrix}
 \end{align*}
+how to follow from here?
 
-\begin{align*}
-  \hat{\mu}_{22}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_2^{-2}
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_3Q_2^{-1}\\
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
-  &=\mu|u_1\cdot\hat{r}|Q_1\\
-  &=\mu Q_1\qquad (????)\\
-  &=\mu \frac{R_2}{R_2-R_1}
-\end{align*}
 
-\begin{align*}
-  \hat{\mu}_{33}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_3^{-2}
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3^{-1}\\
-  &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
-  &=\mu|u_1\cdot\hat{r}|Q_1\\
-  &=\mu Q_1\qquad (????)\\
-  &=\mu \frac{R_2}{R_2-R_1}
-\end{align*}
+% Let's remember that the map we are working with is
+% \[\begin{cases}
+%   q_1(x,y,z)=a+r(x,y)(b-a)/b\\
+%   q_2(x,y,z)=\theta(x,y)\\
+%   q_3(x,y,z)=z\\
+% \end{cases}\]
+%
+% Now we need the unit vectors that point along each axis. They are $u_1=\widehat{q_1},u_2=\widehat{q_2},u_3=\widehat{q_3}$,
+% then
+% \[
+%   g^{-1}=
+%   [u_iu_j]=
+%   \begin{bmatrix}
+%     1 & 0 & 0\\
+%     0 & 1 & 0\\
+%     0 & 0 & 1
+%   \end{bmatrix}
+% \]
+% Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
+% \begin{align*}
+%   \hat{\mu}_{11}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_1^{-2}
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_2Q_3Q_1^{-1}\\
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_1^{-1}\\
+%   &=\mu|u_1\cdot\hat{r}|Q_1^{-1}\\
+%   &=\mu Q_1^{-1}\qquad (???)\\
+%   &=\mu \frac{R_2-R_1}{R_2}
+% \end{align*}
+%
+% \begin{align*}
+%   \hat{\mu}_{22}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_2^{-2}
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_3Q_2^{-1}\\
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
+%   &=\mu|u_1\cdot\hat{r}|Q_1\\
+%   &=\mu Q_1\qquad (????)\\
+%   &=\mu \frac{R_2}{R_2-R_1}
+% \end{align*}
+%
+% \begin{align*}
+%   \hat{\mu}_{33}=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3Q_3^{-2}
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_1Q_2Q_3^{-1}\\
+%   &=\mu|u_1\cdot(u_2\times u_3)|Q_1\\
+%   &=\mu|u_1\cdot\hat{r}|Q_1\\
+%   &=\mu Q_1\qquad (????)\\
+%   &=\mu \frac{R_2}{R_2-R_1}
+% \end{align*}
 
 % \printbibliography
 

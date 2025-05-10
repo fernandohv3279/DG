@@ -17,6 +17,25 @@
 \maketitle
 
 \section*{\#1}
+Let's do it by induction on \(k\). For \(k=1\)
+\[
+  Fl(d_1)\simeq Gr(d_1,\mathbb{R}^n)
+\]
+and on example 3.12.9 of the notes we have the result.
+Now we assume the result for \(k\) and prove it for \(k+1\), i.e.
+\[
+  Fl(d_1,\dots,d_{k+1})\simeq O(n)/(O(n_1)\times\dots\times O(n_{k+1}))
+\]
+We can decompose a flag as
+\[
+  \{<u_1,\dots,u_{d_1}>,\dots,<u_1,\dots,u_{d_{k+1}}>\}
+\]
+the last space is
+\[
+  <u_1,\dots,u_{d_k}>\oplus<u_{d_k+1},\dots,u_{d_k+1}>
+\]
+We only need a new \(O(n_{k+1})\) to fix the new term in the direct sum. Therefore taking the quotient by this new factor gives the result
+by the third isomorphism theorem.
 \section*{\#2}
 We can write the vector field in local coordinates like this
 \[

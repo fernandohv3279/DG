@@ -17,17 +17,41 @@
 \newcommand\myworries[1]{\textcolor{red}{\tbf{#1}}}
 % \renewcommand\myworries[1]{}
 
-\title{An application of differential geometry to magnetic cloaking}
+\title{Basic differential geometry in cloaking}
 \author{Fernando}
 \date{\today}
 \maketitle
 
-\myworries{Improve titles}
-\section{Discalimer}
-I did absolutely nothing. We=they.
-\myworries{How to write this?}
-\section{Intro}
-\blindtext[1]
+\section{Introduction}
+Electromagnetic cloaking is a technique used to make an object invisible or undetectable to electromagnetic waves (like visible light, radar, or microwaves). It works by guiding electromagnetic waves around the object, so they flow as if the object isn’t there.
+
+This is usually done using metamaterials—artificial materials engineered to have specific properties not found in nature. These materials can bend and shape electromagnetic waves in unusual ways, creating a “cloak” that hides the object from detection.
+
+In simple terms: instead of blocking or reflecting light, cloaking materials redirect it around the object, making it appear as if the waves traveled through empty space.
+
+\section{Maxewell's equations}
+
+Maxwell's equations are a set of four fundamental laws that describe how electric and magnetic fields interact and propagate.
+
+(1) Gauss's law for electricity:
+\[\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0},\]
+which states that electric charges produce electric fields;
+
+(2) Gauss's law for magnetism,
+\[\nabla \cdot \mathbf{B} = 0,\]
+indicating that there are no magnetic monopoles;
+
+(3) Faraday's law of induction,
+\[\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t},\]
+showing how a changing magnetic field induces an electric field;
+
+and (4) Ampère's law with Maxwell's addition,
+\[\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t},\]
+which relates magnetic fields to electric currents and changing electric fields.
+Together, these equations form the foundation of classical electromagnetism and explain how electromagnetic waves, such as light, propagate through space.
+
+% According to \cite{thompson12}
+
 \section{Theory}
 This section was taken from \cite{ward96}, specifically sections 1 and 2.
 \myworries{\\Reorganize this section??}
@@ -193,5 +217,8 @@ Then $\hat{\mu}_{ij}=0$ for $i\neq j$ and for $i=j$ we have
 \end{align*}
 
 % \printbibliography
+
+\section{Example: cylindrical cloaking}
+This example is a famous cloak proposed in \cite{schurig06}.
 
 \end{document}
