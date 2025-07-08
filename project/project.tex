@@ -32,9 +32,8 @@ In simple terms: instead of blocking or reflecting light, cloaking materials red
 
 \section{Maxewell's equations}
 
-Maxwell's equations describe how electric and magnetic fields interact and propagate. 
-In terms of the electric field \(\mathbf{E}\) and magnetic field intensity \(\mathbf{H}\), 
-they are given as:
+Maxwell's equations describe how electric and magnetic fields interact and propagate.
+They are given as:
 
 \[
 \nabla \cdot \mathbf{D} = \rho,
@@ -70,7 +69,7 @@ Using the constitutive relations mentioned above, it is possible to write Maxwel
   \nabla \cdot \mathbf{E} &=\frac{\rho}{\varepsilon}\\
   \nabla \cdot \mathbf{H} &=0\\
   \nabla \times \mathbf{E} &= -\mu\frac{\partial \mathbf{H}}{\partial t}\\
-  \nabla \times \mathbf{H} &= +\varepsilon\frac{\partial \mathbf{E}}{\partial t} + \sigma \mathbf{E}
+  \nabla \times \mathbf{H} &= +\varepsilon\frac{\partial \mathbf{E}}{\partial t} + \sigma \mathbf{E}.
 \end{align*}
 
 Under certain hypothesis that we will assume, it is possible to absorb the effect of
@@ -178,7 +177,7 @@ in terms of the new coordinates. This reduces to:
     \frac{r'-a}{r'} & 0 & 0\\
     0 & \frac{r'}{r'-a} & 0\\
     0 & 0 & \left(\frac{b}{b-a}\right)^2\frac{r'-a}{r'}\\
-  \end{bmatrix}
+  \end{bmatrix}.
 \end{align}
 
 \subsection{In Cartesian coordinates}
@@ -217,7 +216,7 @@ In this case \(J\) is simply the Jacobian, which in this case is:
   \frac{\partial x'}{\partial x} & \frac{\partial x'}{\partial y} & 0 \\
   \frac{\partial y'}{\partial x} & \frac{\partial y'}{\partial y} & 0 \\
   0 & 0 & 1\\
-  \end{bmatrix},
+  \end{bmatrix}.
 \end{align}
 Here I kept \(\frac{\partial x'}{\partial x},\frac{\partial x'}{\partial y},\frac{\partial y'}{\partial x},\frac{\partial y'}{\partial y}\) instead of the
 explicit form because they are too long. And again the new parameters are given by
